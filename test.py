@@ -31,3 +31,6 @@ a = 5 + 5
 b = 20
 x = a * b
 print(x)
+
+x2 = (a * b) + 25
+print(x2)
