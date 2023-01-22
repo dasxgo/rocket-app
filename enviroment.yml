@@ -1,0 +1,13 @@
+name: rock
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pandas
+  - ca-certificates
+  - openssl
+  - seaborn
+  - matplotlib
+  - certifi
+  - ipykernel
+prefix: /home/dasxgo/mambaforge/envs/rock
