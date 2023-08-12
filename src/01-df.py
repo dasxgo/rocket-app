@@ -47,9 +47,9 @@ if __name__ == '__main__':
 
     # Save the DataFrame to a CSV file
 
-    df_csv = 'resultado.csv'  
-    print(df.to_csv(df_csv, index=False)) 
-
+    route = '/home/dasxgo/dev/rocket/data/df.csv'
+    df.to_csv(route, index=False)  
+    print(f'DataFrame save on {route}')
 
 
 
