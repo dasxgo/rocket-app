@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def calculate_production_values(df, well_planned):
+def production_values(df, well_planned):
     production_columns = ['LiquidsProd_BBL', 'GasProd_MCF', 'WaterProd_BBL']
     production_data = {}
 
@@ -22,14 +22,14 @@ if __name__ == '__main__':
     print(df.head(5))
 
     well_planned = 5000
-    df = calculate_production_values(df, well_planned)
+    df = production_values(df, well_planned)
     print(df.head())
 
 # Save the DataFrame to a CSV file
     route = '/home/dasxgo/dev/rocket/out/02-plan.csv'
     df.to_csv(route, index=False)  
     print(f'DataFrame save in {route}')
-    
+
 
 
 
