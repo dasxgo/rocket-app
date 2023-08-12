@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
     route = '/home/dasxgo/dev/rocket/data/df.csv'
     df.to_csv(route, index=False)  
-    print(f'DataFrame save on {route}')
+    print(f'DataFrame save in {route}')
 
 
 
