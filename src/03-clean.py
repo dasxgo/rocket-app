@@ -40,4 +40,3 @@ if __name__ == '__main__':
     route = '/home/dasxgo/dev/rocket/out/03-clean.csv'
     df.to_csv(route, index=False)
     print(f'DataFrame saved in {route}')
-
