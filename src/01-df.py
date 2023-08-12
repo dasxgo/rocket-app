@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 
-if __name__ == '__main__':
-    
+def main():
+        
     field = 'IDARADO2'
 
     # WCA file
@@ -44,13 +44,14 @@ if __name__ == '__main__':
     df = pd.concat([df1,df2,df3], ignore_index=True)
     df['ProducingMonth'] = pd.to_datetime(df['ProducingMonth'])
     print(df.head())
-
+    
     # Save the DataFrame to a CSV file
-
-    route = '/home/dasxgo/dev/rocket/out/df.csv'
+    route = '/home/dasxgo/dev/rocket/out/01-df.csv'
     df.to_csv(route, index=False)  
     print(f'DataFrame save in {route}')
 
+if __name__ == '__main__':
+    main()
 
 
 
