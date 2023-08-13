@@ -27,22 +27,18 @@ if __name__ == '__main__':
     print(df.head(5))
     print('=' * 160)
     
-    print(df.describe())
-    print('=' * 160)
-
-    print(df.info())
-    
-    maximos = df.groupby('WellName')['OIL_BBL'].max().reset_index()
-    num_int64 = np.int64(maximos['OIL_BBL'].mean())  # Calculate the average of the maximum values
+    # Transform data
+    max = df.groupby('WellName')['OIL_BBL'].max().reset_index()
+    num_int64 = np.int64(max['OIL_BBL'].mean())  # Calculate the average of the maximum values
     df.loc[df["TotalProdMonths"] <= 1, 'OIL_BBL'] = num_int64  # Assign the average to values ​​less than or equal to 1
     df = df[df['OIL_BBL'] <= num_int64]  # Filter values ​​greater than average
     df_mean = df.groupby('TotalProdMonths').mean().reset_index()
 
     # Example of use of the function
-    
     data1 = df
     data2 = df_mean
     x = 'TotalProdMonths'
     y = "OIL_BBL"
     plot_oil_average_curve(data1, x, y)
-    
+
+
