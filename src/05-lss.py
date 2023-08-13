@@ -14,8 +14,6 @@ def plot_oil_average_curve(data, x, y):
     
     sns.lineplot(data=data1, x=x, y=y, hue="WellName", palette='Greys', 
     estimator=None, n_boot=1000, lw=0.8, orient='x', sort=True, legend=None, ci='deprecated', ax=None)
-    sns.lineplot(data=data1, x=x, y=y, hue="WellName", palette='Greys', 
-    estimator=None, n_boot=1000, lw=0.8, orient='x', sort=True, legend=None, ci='deprecated', ax=None)
     sns.lineplot(data=data2, x=x, y=y, hue=None, palette='Greys', color='C0', 
     estimator=None, n_boot=1000, lw=0.8, orient='x', sort=True, legend=None, ci='deprecated', ax=None)
     
