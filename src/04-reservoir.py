@@ -7,13 +7,13 @@ if __name__ == '__main__':
     print(df.head(5))
     print('=' * 160)
     
-    # Change column target
+    # Change column target - Options: OIL_BBL / GAS_MCF / WATER_BBL
 
-    column = 'OIL_BBL'
+    target = 'OIL_BBL'
 
     def reservoir(df, reservoir):
         reservoir = df[df['RESERVOIR'] == reservoir]
-        return reservoir[['WellName', 'TotalProdMonths', column]]
+        return reservoir[['WellName', 'TotalProdMonths', target]]
     
     # funtion for the reservoir
     df_lss = reservoir(df, "LSS")
