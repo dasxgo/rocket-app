@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     print('=' * 160)
 
-    # clear the data
+    # clean the data
     production_columns = ["OIL_BBL", "GAS_MCF", "WATER_BBL"]
     clean_data(df, production_columns)
 
