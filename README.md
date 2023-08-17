@@ -1,4 +1,4 @@
-# Rocket
+# **Rocket App**
 Data model for projection oil wells
 
 ## Contents
