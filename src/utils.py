@@ -1,6 +1,11 @@
 import pandas as pd
 import numpy as np
 
+def clean_data(df, columns):
+    for col in columns:
+        df.drop(df[(df[col] == 0) | (df[col] < 0)].index, inplace=True)
+
+
 def production_values(df, well_planned):
     production_columns = ['LiquidsProd_BBL', 'GasProd_MCF', 'WaterProd_BBL']
     production_data = {}
