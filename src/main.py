@@ -3,7 +3,7 @@ import numpy as np
 import utils
 
 # Read CSV file
-df = pd.read_csv('/home/dasxgo/dev/rocket/out/02-plan.csv')
+df = pd.read_csv('/home/dasxgo/dev/rocket/reports/02-plan.csv')
 print(df.head(5))
 print('-' * 160)
 
@@ -38,7 +38,7 @@ print('-' * 160)
 
 def main():
     # Read CSV file
-    df2 = pd.read_csv('/home/dasxgo/dev/rocket/out/03-clean.csv')
+    df2 = pd.read_csv('/home/dasxgo/dev/rocket/reports/03-clean.csv')
     print(df2.head(5))
     print('=' * 160)
     
@@ -64,15 +64,15 @@ def main():
     print('=' * 160)
 
     # Save the DataFrame to a CSV file
-    route = '/home/dasxgo/dev/rocket/out/04-lss.csv'
+    route = '/home/dasxgo/dev/rocket/reports/04-lss.csv'
     df_lss.to_csv(route, index=False)
     print(f'DataFrame lss saved in {route}')
 
-    route = '/home/dasxgo/dev/rocket/out/05-wsb.csv'
+    route = '/home/dasxgo/dev/rocket/reports/05-wsb.csv'
     df_wsb.to_csv(route, index=False)
     print(f'DataFrame wsb saved in {route}')
 
-    route = '/home/dasxgo/dev/rocket/out/06-wca.csv'
+    route = '/home/dasxgo/dev/rocket/reports/06-wca.csv'
     df_wca.to_csv(route, index=False)
     print(f'DataFrame wca saved in {route}')
 

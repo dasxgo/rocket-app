@@ -23,7 +23,7 @@ def production_values(df, well_planned):
     return df
 
 if __name__ == '__main__':
-    df = pd.read_csv('/home/dasxgo/dev/rocket/out/01-df.csv')
+    df = pd.read_csv('/home/dasxgo/dev/rocke/reports/01-df.csv')
     print(df.head(5))
 
     well_planned = 5000
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     print(df.head())
 
 # Save the DataFrame to a CSV file
-    route = '/home/dasxgo/dev/rocket/out/02-plan.csv'
+    route = '/home/dasxgo/dev/rocket/reports/02-plan.csv'
     df.to_csv(route, index=False)  
     print(f'DataFrame save in {route}')
 
