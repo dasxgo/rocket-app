@@ -3,7 +3,6 @@ import numpy as np
 import load
 
 df = load.df
-df4 = pd.read_csv('/home/dasxgo/dev/rocket-app/reports/02-plan.csv')
 
 def production_values(df, well_planned):
     production_columns = ['LiquidsProd_BBL', 'GasProd_MCF', 'WaterProd_BBL']

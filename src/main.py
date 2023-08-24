@@ -3,7 +3,6 @@ import numpy as np
 import utils
 
 def main():
-
     # Read CSV file
     df4 = pd.read_csv('/home/dasxgo/dev/rocket-app/reports/02-plan.csv')
     print(df4.head(5))
@@ -36,30 +35,25 @@ def main():
     df4.to_csv(route, index=False)
     print(f'DataFrame saved in {route}')
     print('-' * 160)
-
-    # Read CSV file
-    df5 = pd.read_csv('/home/dasxgo/dev/rocket-app/reports/03-clean.csv')
-    print(df5.head(5))
-    print('=' * 160)
     
     # Change column target - Options: OIL_BBL / GAS_MCF / WATER_BBL
 
     target = 'OIL_BBL'
 
-    def reservoir(df5, reservoir):
-        reservoir = df5[df5['RESERVOIR'] == reservoir]
+    def reservoir(df4, reservoir):
+        reservoir = df4[df4['RESERVOIR'] == reservoir]
         return reservoir[['WellName', 'TotalProdMonths', target]]
     
     # funtion for the reservoir
-    df_lss = reservoir(df5, "LSS")
+    df_lss = reservoir(df4, "LSS")
     print(df_lss.head())
     print('=' * 160)
 
-    df_wsb = reservoir(df5, "WCB")
+    df_wsb = reservoir(df4, "WCB")
     print(df_wsb.head())
     print('=' * 160)
     
-    df_wca = reservoir(df5, "WCA")
+    df_wca = reservoir(df4, "WCA")
     print(df_wca.head())
     print('=' * 160)
 
