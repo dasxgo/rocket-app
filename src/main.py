@@ -4,35 +4,35 @@ import utils
 
 def main():
     # Read CSV file
-    df4 = pd.read_csv('/home/dasxgo/dev/rocket-app/reports/02-plan.csv')
-    print(df4.head(5))
+    data = pd.read_csv('/home/dasxgo/dev/rocket-app/reports/02-plan.csv')
+    print(data.head(5))
     print('-' * 160)
 
     # Display information about the DataFrame
-    print(df4.info())
+    print(data.info())
 
     # Check data for errors
     error_column = 'OIL_BBL'
-    total_errors = df4[(df4[error_column] == 0) | (df4[error_column] < 0)].shape[0]
+    total_errors = data[(data[error_column] == 0) | (data[error_column] < 0)].shape[0]
     print(f'Total errors in {error_column}: {total_errors}')
     print('-' * 160)
 
     # clean the data
     production_columns = ["OIL_BBL", "GAS_MCF", "WATER_BBL"]
-    utils.clean_data(df4, production_columns)
+    utils.clean_data(data, production_columns)
 
     # Check after cleaning
     data_okay_column = 'OIL_BBL'
-    total_errors_cleaned = df4[(df4[data_okay_column] == 0) | (df4[data_okay_column] < 0)].shape[0]
+    total_errors_cleaned = data[(data[data_okay_column] == 0) | (data[data_okay_column] < 0)].shape[0]
     print(f'Total errors in {data_okay_column} after cleaning: {total_errors_cleaned}')
     print('-' * 160)
 
     # Show first clean records
-    print(df4.head())
+    print(data.head())
 
     # Save the DataFrame to a CSV file
     route = '/home/dasxgo/dev/rocket-app/reports/03-clean.csv'
-    df4.to_csv(route, index=False)
+    data.to_csv(route, index=False)
     print(f'DataFrame saved in {route}')
     print('-' * 160)
     
@@ -40,20 +40,20 @@ def main():
 
     target = 'OIL_BBL'
 
-    def reservoir(df4, reservoir):
-        reservoir = df4[df4['RESERVOIR'] == reservoir]
+    def reservoir(data, reservoir):
+        reservoir = data[data['RESERVOIR'] == reservoir]
         return reservoir[['WellName', 'TotalProdMonths', target]]
     
     # funtion for the reservoir
-    df_lss = reservoir(df4, "LSS")
+    df_lss = reservoir(data, "LSS")
     print(df_lss.head())
     print('=' * 160)
 
-    df_wsb = reservoir(df4, "WCB")
+    df_wsb = reservoir(data, "WCB")
     print(df_wsb.head())
     print('=' * 160)
     
-    df_wca = reservoir(df4, "WCA")
+    df_wca = reservoir(data, "WCA")
     print(df_wca.head())
     print('=' * 160)
 
