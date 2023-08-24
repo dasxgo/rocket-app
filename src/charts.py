@@ -21,7 +21,7 @@ def plot_oil_average_curve(data1, data2 , x, y):
 
 if __name__ == '__main__':
     # Read CSV file
-    df = pd.read_csv('/home/dasxgo/dev/rocket/out/04-lss.csv')
+    df = pd.read_csv('/home/dasxgo/dev/rocket-app/reports/04-lss.csv')
     print(df.head(5))
     print('=' * 160)
     

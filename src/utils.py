@@ -3,7 +3,7 @@ import numpy as np
 import load
 
 df = load.df
-df4 = pd.read_csv('/home/dasxgo/dev/rocket/reports/02-plan.csv')
+df4 = pd.read_csv('/home/dasxgo/dev/rocket-app/reports/02-plan.csv')
 
 def production_values(df, well_planned):
     production_columns = ['LiquidsProd_BBL', 'GasProd_MCF', 'WaterProd_BBL']
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     print(df.head())
     
     # Save the DataFrame to a CSV file
-    route = '/home/dasxgo/dev/rocket/reports/02-plan.csv'
+    route = '/home/dasxgo/dev/rocket-app/reports/02-plan.csv'
     df.to_csv(route, index=False)  
     print(f'DataFrame save in {route}')
 

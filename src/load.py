@@ -5,7 +5,7 @@ field = 'IDARADO2'
 
 # WCA file
 
-df1 = pd.read_csv('/home/dasxgo/dev/rocket/data/WCA_2.csv')
+df1 = pd.read_csv('/home/dasxgo/dev/rocket-app/data/WCA_2.csv')
 data_major = 'OIL'
 data_reservoir = 'WCA'
 df1.insert(0, 'FIELD', field) 
@@ -14,7 +14,7 @@ df1.insert(2, 'RESERVOIR', data_reservoir)
 
 # WCB file
 
-df2 = pd.read_csv('/home/dasxgo/dev/rocket/data/WCB_2.csv')
+df2 = pd.read_csv('/home/dasxgo/dev/rocket-app/data/WCB_2.csv')
 data_major = 'OIL'
 data_reservoir = 'WCB'
 df2.insert(0, 'FIELD', field) 
@@ -23,7 +23,7 @@ df2.insert(2, 'RESERVOIR', data_reservoir)
     
 # LSS file
 
-df3 = pd.read_csv('/home/dasxgo/dev/rocket/data/LSS_2.csv')
+df3 = pd.read_csv('/home/dasxgo/dev/rocket-app/data/LSS_2.csv')
 data_major = 'OIL'
 data_reservoir = 'LSS'
 df3.insert(0, 'FIELD', field) 
@@ -36,7 +36,7 @@ df = pd.concat([df1,df2,df3], ignore_index=True)
 df['ProducingMonth'] = pd.to_datetime(df['ProducingMonth'])
 
 # Save the DataFrame to a CSV file
-route = '/home/dasxgo/dev/rocket/reports/01-df.csv'
+route = '/home/dasxgo/dev/rocket-app/reports/01-df.csv'
 df.to_csv(route, index=False)
 
     
