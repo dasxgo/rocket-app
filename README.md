@@ -9,7 +9,7 @@ This repository contains data model for projection oil wells
 
 ## Code
 
-You can find the code for this project here
+You can find the code for this project here.
 
 Folders overview:
 
